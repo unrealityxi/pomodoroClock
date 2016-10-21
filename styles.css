@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Warnes');
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
-
+@import url('https://fonts.googleapis.com/css?family=Iceland');
 
 
 body {
@@ -14,40 +14,47 @@ body {
   -webkit-user-select: none; /* Chrome/Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
+  margin-top: 4em;
+  transition: 1s ease-in-out all;
 }
+
+@media screen and (max-width: 650px) {
+    body {
+        margin-top: 0;
+    }
+    .controlSection {
+      position: static;
+    }
+}
+
 
 div {
   display: inline-block;
-}
-
-h1 {
-  color: yellow;
-  font-family: "Warnes";
-  text-transform: uppercase;
-  font-size: 2.5em;
 }
 
 .wrapper {
   width: 100%;
   height: 100vh;
   position: relative;
+
 }
 .deadCenter {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block;
+  margin: 10% 0;
   font-family: "Warnes";
   font-weight: bold;
   font-size: 5em;
+
   text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #ff00de , 0 0 70px #ff00de , 0 0 80px #ff00de , 0 0 100px #ff00de ;
-  
+
 }
 
 .controlSection {
-  padding: 1em;
-  margin-top: 1em;
+  position: relative;
+  left: 0.8em;
+  margin: 0 2em;
   width: 10em;
+  transition: 1s ease-in-out all;
 }
 .controlBtn {
   padding: 0.7em;
@@ -63,7 +70,9 @@ h1 {
   position: relative;
   left: 1px;
 }
-
+#session {
+  transition: 1s ease-in-out all;
+}
 #session:active {
   position: relative;
   top: 2px;
@@ -73,8 +82,8 @@ h1 {
   -webkit-animation: neon4 3s ease-in-out infinite alternate;
   -moz-animation: neon4 3s ease-in-out infinite alternate;
   animation: neon4 3s ease-in-out infinite alternate;
-}
 
+}
 
 .redGlow {
   -webkit-animation: neon1 3s ease-in-out infinite alternate;
@@ -82,6 +91,11 @@ h1 {
   animation: neon1 3s ease-in-out infinite alternate;
 }
 
+.blueGlow {
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
 
 
 
@@ -121,3 +135,20 @@ h1 {
   }
 }
 
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@-moz-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}

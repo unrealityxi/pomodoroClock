@@ -28,7 +28,7 @@ function startSession(){
             return startBreak();
         }
         $("#session").removeClass();
-        $("#session").addClass("greenGlow"); 
+        $("#session").addClass("blueGlow"); 
         sessionDuration--;
         output("#session", secToString(sessionDuration));
         timer = setTimeout(startSession, 1000);

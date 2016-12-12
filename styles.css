@@ -37,8 +37,7 @@ body {
   top: 100%;
   z-index: -1;
   background-color: #8a0027;
-/*  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
-*/
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
 }
 
 
@@ -49,10 +48,9 @@ body {
   margin: 0px auto;
   border: 2px solid white;
   overflow: hidden;
-  background-color: /*rgba(220, 30, 75, 0.4)*/ rgba(139, 0, 36, 0.2);
-  filter: brightness(390%);
-  /*background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
-*/
+  background-color: #8a0027;
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
+
 
 }
 

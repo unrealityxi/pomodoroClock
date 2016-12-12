@@ -9,10 +9,10 @@
   var sessionLength = sessionDuration;
   var session = true;
   var firstRun = true;
-  var speed = 10;
+  var speed = 1000;
 
-  var blue = "rgba(66, 66, 255, 0.3)"
-  var red = "rgba(139, 0, 36, 0.2)"
+  var blue = "rgba(22, 22, 255, 0.7)"
+  var red = "rgba(138, 0, 39, 1)"
 
 function pause(){
   if (!paused){
@@ -50,7 +50,7 @@ function startSession(){
             return startBreak();
         }
         session = true;
-        $("#wrapper, #filling").css({"background-color": blue, filter: "brightness(195%)"}); 
+        $("#wrapper, #filling").css("background-color", blue); 
         sessionDuration--;
 
         fillScreen(getInversePercent(sessionDuration, sessionLength));
@@ -68,7 +68,7 @@ function startBreak(){
             return startSession();
         }
         session = false; 
-        $("#wrapper, #filling").css({"background-color": red, "filter": "brightness(390%)"});
+        $("#wrapper, #filling").css("background-color", red);
         breakDuration--;
 
         fillScreen(getInversePercent(breakDuration, breakLength));

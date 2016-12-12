@@ -9,6 +9,10 @@
   var sessionLength = sessionDuration;
   var session = true;
   var firstRun = true;
+  var speed = 1000;
+
+  var blue = "rgba(22, 22, 255, 0.7)"
+  var red = "rgba(138, 0, 39, 1)"
 
 function pause(){
   if (!paused){
@@ -18,9 +22,9 @@ function pause(){
     $("#indicator > i").removeClass("fa-spin");
   }
   else {
+    $("#indicator > i").addClass("fa-spin");
     paused = false;
     isRunning = true;
-    $("#indicator > i").addClass("fa-spin");
     if (session){
       startSession();
     }
@@ -46,14 +50,14 @@ function startSession(){
             return startBreak();
         }
         session = true;
-        $("#wrapper, #filling").css("background-color", "#2222ff"); 
+        $("#wrapper, #filling").css("background-color", blue); 
         sessionDuration--;
 
         fillScreen(getInversePercent(sessionDuration, sessionLength));
 
 
         output("#session", secToString(sessionDuration));
-        timer = setTimeout(startSession, 10);
+        timer = setTimeout(startSession, speed);
     }
 
 function startBreak(){
@@ -64,17 +68,33 @@ function startBreak(){
             return startSession();
         }
         session = false; 
-        $("#wrapper, #filling").css("background-color", "#8a0027"); 
+        $("#wrapper, #filling").css("background-color", red);
         breakDuration--;
 
         fillScreen(getInversePercent(breakDuration, breakLength));
         output("#session", secToString(breakDuration));
-        timer = setTimeout(startBreak, 10);
+        timer = setTimeout(startBreak, speed);
     }
 
   // Attach click handlers
   $(".breakCtrl > .increment").click({target:"#breakLength"}, increment);
   $(".breakCtrl > .decrement").click({target:"#breakLength"}, decrement);
+
+  $(".breakCtrl > .decrement, .breakCtrl > .increment").click(function(){
+
+    if (paused && !session) {
+      fillScreen(100);
+
+      output("#session", secToString(stringToSec(readInput("#breakLength"))));
+      breakDuration = stringToSec(readInput("#breakLength"));
+      breakLength = breakDuration;
+
+    }
+    
+
+
+  });
+
 
   $(".sessCtrl > .increment").click({target:"#sessionLength"}, increment);
   $(".sessCtrl > .decrement").click({target:"#sessionLength"}, decrement);
@@ -82,15 +102,14 @@ function startBreak(){
     if (isRunning){
         return;
     }
-
-
     output("#session", secToString(stringToSec(readInput("#sessionLength"))));
     sessionDuration = stringToSec(readInput("#sessionLength"));
     firstRun = true;
-    $("#wrapper, #filling").css("background-color", "#2222ff"); 
+    session = true;
+    $("#wrapper, #filling").css("background-color", blue); 
     fillScreen(100);
   });
-  $("#session").click(pause);
+  $("#session, #indicator").click(pause);
 
   
   
@@ -171,7 +190,7 @@ function startBreak(){
   }
 
   function fillScreen(percent){
-    $("#filling").css("top", percent + "vh");
+    $("#filling").css({top: percent + "vh", transition: "1s"});
   }
 
   function getInversePercent(a, b){

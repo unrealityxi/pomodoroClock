@@ -2,11 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 @import url('https://fonts.googleapis.com/css?family=Iceland');
 
-
 body {
   text-align: center;
   color: white;
-  background-color: black;
+  margin: 0;
   font-variant: small-caps;
   font-family: sans-serif;
   font-size: 1.2em;
@@ -16,6 +15,9 @@ body {
   -ms-user-select: none; /* IE10+ */
   margin-top: 4em;
   transition: 1s ease-in-out all;
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
+  overflow: hidden;
+
 }
 
 @media screen and (max-width: 650px) {
@@ -28,33 +30,35 @@ body {
 }
 
 
-div {
-  display: inline-block;
-}
-
-.wrapper {
-  width: 100%;
+#filling {
+  position: absolute;
   height: 100vh;
-  position: relative;
-
+  width: 100%;
+  top: 100%;
+  z-index: -1;
+  background-color: #8a0027;
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
 }
-.deadCenter {
-  display: block;
-  margin: 10% 0;
-  font-family: "Warnes";
-  font-weight: bold;
-  font-size: 5em;
 
-  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #ff00de , 0 0 70px #ff00de , 0 0 80px #ff00de , 0 0 100px #ff00de ;
+
+#wrapper {
+  position: relative;
+  width: 311px;
+  height: 311px;
+  margin: 0px auto;
+  border: 2px solid white;
+  overflow: hidden;
+  background-color: rgba(138, 0, 39, 1);
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
+
 
 }
 
 .controlSection {
-  position: relative;
-  left: 0.8em;
-  margin: 0 2em;
-  width: 10em;
-  transition: 1s ease-in-out all;
+  display: inline-block;
+  width: 48%;
+  margin-top: 10px;
+
 }
 .controlBtn {
   padding: 0.7em;
@@ -72,83 +76,13 @@ div {
 }
 #session {
   transition: 1s ease-in-out all;
+  margin: 40px auto;
+  font-size: 3em;
 }
 #session:active {
   position: relative;
   top: 2px;
 }
-
-.greenGlow {
-  -webkit-animation: neon4 3s ease-in-out infinite alternate;
-  -moz-animation: neon4 3s ease-in-out infinite alternate;
-  animation: neon4 3s ease-in-out infinite alternate;
-
-}
-
-.redGlow {
-  -webkit-animation: neon1 3s ease-in-out infinite alternate;
-  -moz-animation: neon1 3s ease-in-out infinite alternate;
-  animation: neon1 3s ease-in-out infinite alternate;
-}
-
-.blueGlow {
-  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-  animation: neon2 1.5s ease-in-out infinite alternate;
-}
-
-
-
-
-@-webkit-keyframes neon4 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
-  }
-}
-
-@-moz-keyframes neon4 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #B6FF00, 0 0 70px #B6FF00, 0 0 80px #B6FF00, 0 0 100px #B6FF00, 0 0 150px #B6FF00;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
-  }
-}
-
-@-webkit-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-  }
-}
-@-moz-keyframes neon1 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
-  }
-}
-
-
-@-webkit-keyframes neon2 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-  }
-}
-@-moz-keyframes neon2 {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-  }
+#indicator:hover {
+  cursor: pointer;
 }

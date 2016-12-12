@@ -4,34 +4,48 @@
 	<title>Pomodoro Clock</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div id="controls">
-      
-      <div class="controlSection breakCtrl">
-       <p> break length</p>
-        <span class="controlBtn decrement">-</span> <span id="breakLength">5</span> <span class="controlBtn increment">+</span>
+<div id="filling">
       </div>
+  <div id="wrapper">
+
+    
+
+
+      <div id="main">
       
-      <div class="controlSection sessCtrl">
-        <p>session length</p>
-        <span class="controlBtn decrement" >-</span> <span id="sessionLength">25</span> <span class="controlBtn increment">+</span>
+        <div id="controls">
+          
+          <div class="controlSection breakCtrl">
+           <p> break length</p>
+            <span class="controlBtn decrement">-</span> <span id="breakLength">2</span> <span class="controlBtn increment">+</span>
+          </div>
+          
+          <div class="controlSection sessCtrl">
+            <p>session length</p>
+            <span class="controlBtn decrement" >-</span> <span id="sessionLength">2</span> <span class="controlBtn increment">+</span>
+          </div>
+          
+        </div>
+        
+        <div id="session">2:00
+        </div>
+        <div id="indicator"><i class="fa fa-clock-o fa-3x"></i>
+</div>
       </div>
-      
-    </div>
-    <div class="deadCenter">
-      <div id="session">25:00
-      </div>
-    </div>
+    
+
   </div>
   
   
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-			  crossorigin="anonymous">
+			  crossorigin="anonymous"> -->
+        <script type="text/javascript" src="jquery.js"></script>
   </script>
-  <script src="app.js"></script>
+  <script src="app11.js"></script>
 </body>
 </html>
